@@ -241,6 +241,26 @@ tbody tr:hover {
 
 
 /* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  .data-table {
+    padding: 1.5rem;
+  }
+
+  .filter-group input,
+  .filter-group select {
+    font-size: 0.95rem;
+  }
+
+  th, td {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+
+  .modal-content {
+    width: 80%;
+  }
+}
+
 @media (max-width: 768px) {
   .filters {
     flex-direction: column;
@@ -250,22 +270,57 @@ tbody tr:hover {
     justify-content: flex-start;
   }
 
-  th, td {
-    font-size: 0.95rem;
-    padding: 0.75rem;
-  }
-
-  .data-table {
-    padding: 1.5rem;
-  }
-
   #column-toggle-btn {
     width: 100%;
+    font-size: 0.9rem;
   }
 
   .dropdown-panel {
     right: auto;
     left: 0;
     min-width: 100%;
+    padding: 0.8rem;
+  }
+
+  th, td {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .data-table h3 {
+    font-size: 1.5rem;
+  }
+
+  .filter-group label {
+    font-size: 0.9rem;
+  }
+
+  .filter-group input,
+  .filter-group select {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .close {
+    font-size: 24px;
+    top: 10px;
+    right: 15px;
   }
 }
