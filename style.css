@@ -239,6 +239,68 @@ tbody tr:hover {
 }
 
 
+/* 🔒 Modal Overlay */
+#modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0; /* top, right, bottom, left = 0 */
+  background-color: rgba(0, 0, 0, 0.5); /* Slightly darker */
+  backdrop-filter: blur(2px); /* Blur background for modern look */
+  z-index: 999;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* 📦 Modal Container */
+#details-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  color: #333;
+  width: 95%;
+  max-width: 650px;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-height: 80vh;
+  overflow-y: auto;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* 🌀 Modal Fade Animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Optional: Modal close button styles */
+#details-modal .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 1.3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s;
+}
+#details-modal .close-btn:hover {
+  color: #e63946;
+}
+
+
+
 
 /* 📱 Responsive Design */
 @media (max-width: 1024px) {
@@ -324,3 +386,4 @@ tbody tr:hover {
     right: 15px;
   }
 }
+
