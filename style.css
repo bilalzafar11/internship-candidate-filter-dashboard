@@ -1,0 +1,271 @@
+/* 🌐 Reset & Base Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f1f3f6;
+  color: #333;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+/* 💳 Data Table Container */
+.data-table {
+  max-width: 1200px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem 2.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.data-table h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+  font-weight: 700;
+}
+
+/* 🔍 Filter Section */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-group {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 0.65rem 0.9rem;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+  outline: none;
+}
+
+/* 🛠️ Column Toggle Dropdown */
+.filter-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  flex: 1 1 100%;
+}
+
+#column-toggle-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #0066cc;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#column-toggle-btn:hover {
+  background-color: #004a99;
+}
+
+.dropdown-panel {
+  position: absolute;
+  top: 115%;
+  right: 0;
+  min-width: 220px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  gap: 0.6rem;
+  z-index: 1000;
+}
+
+.dropdown-panel label {
+  display: block;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+#column-toggle-btn:focus + .dropdown-panel,
+.dropdown-panel:hover {
+  display: flex;
+}
+
+/* 📊 Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.2rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e4e4e4;
+  font-size: 1rem;
+}
+
+th:first-child,
+td:first-child {
+  border-left: none;
+}
+
+th:last-child,
+td:last-child {
+  border-right: none;
+}
+
+tbody tr:hover {
+  background-color: #eef6ff;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+
+/* 🖼️ Modal Styling */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 10px;
+  font-family: monospace;
+}
+.close-btn {
+  float: right;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+/* 🪟 Modal Overlay */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+/* 📦 Modal Box */
+.modal-content {
+  background-color: #fff;
+  margin: 8% auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 60%;
+  max-width: 600px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  position: relative;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* ❌ Close Button */
+.close {
+  color: #aaa;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* 🧊 Modal Animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  .filter-wrapper {
+    justify-content: flex-start;
+  }
+
+  th, td {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  .data-table {
+    padding: 1.5rem;
+  }
+
+  #column-toggle-btn {
+    width: 100%;
+  }
+
+  .dropdown-panel {
+    right: auto;
+    left: 0;
+    min-width: 100%;
+  }
+}

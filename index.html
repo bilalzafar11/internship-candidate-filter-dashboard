@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interview Dashboard</title>
+
+  <!-- 🌐 Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- 🎨 External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 🧑‍💼 Interview Candidates Table Section -->
+  <section class="data-table">
+    <h3>Candidate Interviews</h3>
+
+    <!-- 🔍 Filters & Search -->
+    <div class="filters">
+      <!-- 🔍 Search by Name -->
+      <div class="filter-group">
+        <label for="search-input">🔍 Search by Name:</label><br />
+        <input type="text" id="search-input" placeholder="Search..." />
+      </div>
+
+      <!-- 🎯 Filter by Role -->
+      <div class="filter-group">
+        <label for="role-filter">🎯 Filter by Role:</label><br />
+        <select id="role-filter">
+          <option value="">All Roles</option>
+        </select>
+      </div>
+
+      <!-- ✅ Filter by Interview Status -->
+      <div class="filter-group">
+        <label for="status-filter">✅ Filter by Interview Status:</label><br />
+        <select id="status-filter">
+          <option value="">All Status</option>
+          <option value="Selected">Selected</option>
+          <option value="Pending">Pending</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </div>
+
+      <!-- 📤 Upload CSV File -->
+      <div class="filter-group">
+        <label for="csv-upload">📤 Import Candidate Data:</label><br />
+        <input type="file" id="csv-upload" accept=".csv" />
+      </div>
+
+<!-- 🛠️ Show/Hide Columns Dropdown -->
+<div class="filter-wrapper">
+  <button id="column-toggle-btn">🛠️ Show/Hide Columns</button>
+  <div id="column-checkboxes" class="dropdown-panel">
+    <label><input type="checkbox" class="toggle-column" data-column="0" checked /> Name</label>
+    <label><input type="checkbox" class="toggle-column" data-column="1" checked /> Gender</label>
+    <label><input type="checkbox" class="toggle-column" data-column="2" checked /> Phone</label>
+    <label><input type="checkbox" class="toggle-column" data-column="3" checked /> Role</label>
+    <label><input type="checkbox" class="toggle-column" data-column="4" checked /> Interview Status</label>
+  </div>
+</div>
+
+    </div>
+
+    <!-- 📊 Candidate Data Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Phone</th>
+          <th>Role</th>
+          <th>Interview Status</th>
+        </tr>
+      </thead>
+      <tbody id="candidate-table-body">
+        <!-- Dynamic rows will be injected via script.js -->
+      </tbody>
+    </table>
+
+
+<!-- 📄 Candidate Detail Modal (Fixed) -->
+<div id="details-modal" style="display: none; padding: 20px; background: #fff; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+  <h3>Candidate Details</h3>
+  <span id="close-modal" style="float:right; cursor:pointer;">❌</span>
+  <div id="modal-details-content"></div>
+</div>
+
+  </section>
+
+  
+
+  <!-- 📜 Script -->
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
