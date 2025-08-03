@@ -303,6 +303,7 @@ tbody tr:hover {
 
 
 
+
 /* 📱 Responsive Design */
 /* 📱 Tablets & Small Laptops (≤1024px) */
 @media (max-width: 1024px) {
@@ -327,8 +328,111 @@ tbody tr:hover {
   }
 }
 
-/* 📱 Tablets & Mobiles Portrait (≤768px) */
-@media (max-width: 768px) {
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+/* notifications.css */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+.toast-success {
+  background-color: #4CAF50;
+  border-left: 5px solid #388E3C;
+}
+
+.toast-error {
+  background-color: #f44336;
+  border-left: 5px solid #D32F2F;
+}
+
+.toast-info {
+  background-color: #2196F3;
+  border-left: 5px solid #1976D2;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Animation for appearing */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast {
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* 🌐 Mobile First Approach */
+
+/* 📱 Small Mobiles (≤480px) */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+
+  .data-table {
+    padding: 0.5rem;
+    box-shadow: none;
+    overflow-x: auto;
+  }
+
+  .data-table h3 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
   .filters {
     flex-direction: column;
     gap: 1rem;
@@ -338,22 +442,34 @@ tbody tr:hover {
     width: 100%;
   }
 
+  .filter-group label {
+    font-size: 0.85rem;
+  }
+
+  .filter-group input,
+  .filter-group select {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+    width: 100%;
+  }
+
   .filter-wrapper {
     justify-content: flex-start;
     margin-top: 1rem;
+    width: 100%;
   }
 
   #column-toggle-btn {
     width: 100%;
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    padding: 0.5rem;
   }
 
   .dropdown-panel {
-    position: relative;
     width: 100%;
+    position: relative;
     box-shadow: none;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     padding: 0.9rem;
     border-radius: 6px;
     margin-top: 0.5rem;
@@ -369,55 +485,11 @@ tbody tr:hover {
 
   table {
     display: block;
+    width: 100%;
     overflow-x: auto;
     white-space: nowrap;
+    font-size: 0.85rem;
     border-collapse: collapse;
-  }
-
-  th, td {
-    font-size: 0.88rem;
-    padding: 0.7rem;
-  }
-
-  .modal-content {
-    width: 95%;
-    padding: 1.2rem;
-  }
-}
-
-/* 📲 Small Mobiles (≤480px) */
-@media (max-width: 480px) {
-  body {
-    padding: 1rem;
-  }
-
-  .data-table {
-    padding: 0.5rem;
-    overflow-x: auto;
-  }
-
-  .data-table h3 {
-    font-size: 1.3rem;
-    text-align: center;
-  }
-
-  .filter-group label {
-    font-size: 0.85rem;
-  }
-
-  .filter-group input,
-  .filter-group select {
-    font-size: 0.85rem;
-    padding: 0.6rem;
-    width: 100%;
-  }
-
-  table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    font-size: 0.85rem;
   }
 
   th, td {
@@ -425,20 +497,78 @@ tbody tr:hover {
     padding: 0.6rem 0.4rem;
   }
 
-  .modal-content {
+  .modal-content,
+  #details-modal {
     width: 98%;
     padding: 1rem;
+    max-height: 90vh;
   }
 
-  .close {
+  .close, .close-btn {
     font-size: 22px;
     top: 10px;
-    right: 12px;
+    right: 10px;
+  }
+}
+
+
+/* 📱 Tablets & Mid Devices (≤768px) */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .filter-wrapper {
+    justify-content: flex-start;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 0.75rem;
+  }
+
+  .modal-content,
+  #details-modal {
+    width: 90%;
+    padding: 1.4rem;
   }
 
   #column-toggle-btn {
-    font-size: 0.85rem;
-    padding: 0.5rem;
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+
+/* 💻 Tablets & Small Laptops (≤1024px) */
+@media (max-width: 1024px) {
+  .data-table {
+    padding: 1.5rem 1rem;
+  }
+
+  table {
+    font-size: 1rem;
+  }
+
+  th, td {
+    padding: 0.9rem;
+  }
+
+  .modal-content,
+  #details-modal {
+    width: 85%;
+    padding: 2rem;
   }
 }
 
