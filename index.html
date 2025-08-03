@@ -50,18 +50,17 @@
         <input type="file" id="csv-upload" accept=".csv" />
       </div>
 
-<!-- 🛠️ Show/Hide Columns Dropdown -->
-<div class="filter-wrapper">
-  <button id="column-toggle-btn">🛠️ Show/Hide Columns</button>
-  <div id="column-checkboxes" class="dropdown-panel">
-    <label><input type="checkbox" class="toggle-column" data-column="0" checked /> Name</label>
-    <label><input type="checkbox" class="toggle-column" data-column="1" checked /> Gender</label>
-    <label><input type="checkbox" class="toggle-column" data-column="2" checked /> Phone</label>
-    <label><input type="checkbox" class="toggle-column" data-column="3" checked /> Role</label>
-    <label><input type="checkbox" class="toggle-column" data-column="4" checked /> Interview Status</label>
-  </div>
-</div>
-
+      <!-- 🛠️ Show/Hide Columns Dropdown -->
+      <div class="filter-wrapper">
+        <button id="column-toggle-btn">🛠️ Show/Hide Columns</button>
+        <div id="column-checkboxes" class="dropdown-panel">
+          <label><input type="checkbox" class="toggle-column" data-column="0" checked /> Name</label>
+          <label><input type="checkbox" class="toggle-column" data-column="1" checked /> Gender</label>
+          <label><input type="checkbox" class="toggle-column" data-column="2" checked /> Phone</label>
+          <label><input type="checkbox" class="toggle-column" data-column="3" checked /> Role</label>
+          <label><input type="checkbox" class="toggle-column" data-column="4" checked /> Interview Status</label>
+        </div>
+      </div>
     </div>
 
     <!-- 📊 Candidate Data Table -->
@@ -80,20 +79,16 @@
       </tbody>
     </table>
 
-
-<!-- 📄 Candidate Detail Modal (Fixed) -->
-<div id="details-modal" style="display: none; padding: 20px; background: #fff; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-  <h3>Candidate Details</h3>
-  <span id="close-modal" style="float:right; cursor:pointer;">❌</span>
-  <div id="modal-details-content"></div>
-</div>
-
-
+    <!-- 📄 Candidate Detail Modal (Fixed) -->
+    <div id="details-modal" style="display: none; padding: 20px; background: #fff; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+      <h3>Candidate Details</h3>
+      <span id="close-modal" style="float:right; cursor:pointer;">❌</span>
+      <div id="modal-details-content"></div>
+    </div>
   </section>
 
-  
-
-  <!-- 📜 Script -->
+  <!-- 📜 JavaScript Modules -->
+  <script type="module" src="firebase-config.js"></script>
   <script type="module" src="script.js"></script>
 
 </body>
