@@ -393,15 +393,29 @@ function populateStatusFilter(data) {
 
 // 🔍 Apply All Filters: Keyword + Role + Status
 function applyFilters() {
-  const keyword = document.getElementById("search-input").value.trim().toLowerCase();
+  const keywordInput = document.getElementById("search-input").value.trim().toLowerCase();
   const selectedRole = document.getElementById("role-filter").value;
   const selectedStatus = document.getElementById("status-filter").value;
 
+  // Allow multiple keywords (space-separated)
+  const keywords = keywordInput.split(/\s+/).filter(k => k.length > 0);
+
   const filteredCandidates = allCandidates.filter(candidate => {
-    const fullText = Object.values(candidate).join(" ").toLowerCase();
-    const matchesKeyword = keyword === "" || fullText.includes(keyword);
-    const matchesRole = selectedRole === "" || candidate.Role === selectedRole;
-    const matchesStatus = selectedStatus === "" || candidate["Interview Status"] === selectedStatus;
+    // ✅ Match search keywords in specific fields
+    const fieldsToSearch = [
+      candidate.Name,
+      candidate.Email,
+      candidate.Phone,
+      candidate.City,
+      candidate.Role
+    ].map(field => (field || "").toLowerCase());
+
+    const matchesKeyword = keywords.every(kw =>
+      fieldsToSearch.some(field => field.includes(kw))
+    );
+
+    const matchesRole = !selectedRole || candidate.Role === selectedRole;
+    const matchesStatus = !selectedStatus || candidate["Interview Status"] === selectedStatus;
 
     return matchesKeyword && matchesRole && matchesStatus;
   });
@@ -446,4 +460,5 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("status-filter").addEventListener("change", applyFilters);
   });
 });
+
 
