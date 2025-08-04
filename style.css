@@ -284,6 +284,13 @@ tbody tr:hover {
   }
 }
 
+#details-modal {
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+
 /* Optional: Modal close button styles */
 #details-modal .close-btn {
   position: absolute;
@@ -571,5 +578,6 @@ tbody tr:hover {
     padding: 2rem;
   }
 }
+
 
 
