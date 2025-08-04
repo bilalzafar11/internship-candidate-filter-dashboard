@@ -439,5 +439,11 @@ function setupColumnToggles() {
 // 🚀 Init
 window.addEventListener("DOMContentLoaded", () => {
   setupColumnToggles();
-  loadCandidatesFromFirestore();
+  loadCandidatesFromFirestore().then(() => {
+    // ✅ Add these listeners AFTER Firebase data is loaded
+    document.getElementById("search-input").addEventListener("input", applyFilters);
+    document.getElementById("role-filter").addEventListener("change", applyFilters);
+    document.getElementById("status-filter").addEventListener("change", applyFilters);
+  });
 });
+
