@@ -260,8 +260,9 @@ tbody tr:hover {
   transform: translate(-50%, -50%);
   background: #ffffff;
   color: #333;
-  width: 95%;
-  max-width: 650px;
+  width: 60%;              /* Default width */
+  max-width: 650px;        /* Desktop par maximum 650px */
+  min-width: 320px;        /* Mobile par chhoti na ho */
   padding: 30px 25px;
   border-radius: 12px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
@@ -578,6 +579,7 @@ tbody tr:hover {
     padding: 2rem;
   }
 }
+
 
 
 
